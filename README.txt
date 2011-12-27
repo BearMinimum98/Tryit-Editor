@@ -1,1 +1,1 @@
-This gir is being updated and is not currently ready for use. Thank you.
+This git is being updated and is not currently ready for use. Thank you.
