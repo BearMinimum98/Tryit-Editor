@@ -1,1 +1,0 @@
-When a new version of Tryit Editor is released, you will only be prompted once for upgrading, If you choose not to upgrade and hit cancel, you can upgrade anytime by opening updater.html

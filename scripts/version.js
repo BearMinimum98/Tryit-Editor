@@ -1,1 +1,0 @@
-var thisvernum=23;
