@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>md5sum check</title>
+		<script type="text/javascript" src="scripts/autoupdatr/md5.js"></script>
+		<script type="text/javascript" src="http://tgwebs.webs.com/tryiteditor/md5.js"></script>
+		<script type="text/javascript" src="scripts/autoupdatr/integrity.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			if (integrity) {
+				document.write("File check complete. No files modified");
+			}
+			else {
+				document.write("Files modified. File cache has been cleared. Please open update.html again to redownload files.");
+				localStorage.clear();
+			}
+		</script>
+	</body>
+</html>
