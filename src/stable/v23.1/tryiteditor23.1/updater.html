@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Check for updates - Tryit Editor
+		</title>
+		<script type="text/javascript" src="scripts/version.js"></script>
+		<script type="text/javascript" src="http://tryiteditor.webs.com/vernum.js"></script>
+		<script type="text/javascript">
+			localStorage.removeItem("lastVersionPrompt");
+			if (vernum == thisvernum) {
+				alert("No update available");
+			}
+			window.close();
+		</script>
+		<style>
+			h1 {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			Tryit Editor update checker
+		</p>
+	</body>
+</html>
