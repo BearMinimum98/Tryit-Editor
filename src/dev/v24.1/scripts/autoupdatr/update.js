@@ -21,12 +21,12 @@ if (navigator.onLine || manifest) {
 			ele.type = "text/javascript";
 			document.head.appendChild(ele);
 		}
-		localStorage.version = manifest.version;
 		window.onload = function() {
 			for (var i = 0; i < manifest.files.length; i++) {
 				localStorage[manifest.files[i].name] = window[manifest.files[i].name];
 				localStorage.resources += manifest.files[i].name + ";";
 			}
+			localStorage.version = manifest.version;
 			alert("Tryit Editor was updated. The page will now reload.");
 			location.reload();
 		}
