@@ -12,7 +12,7 @@ if (localStorage.resources == null || localStorage.resources == "") {
 if (localStorage.version == null) {
 	localStorage.version = 0;
 }
-if (navigator.onLine || manifest) {
+if (navigator.onLine || typeof manifest != "undefined") {
 	if (manifest.version > localStorage.version) {
 		localStorage.resources = "";
 		for (var i = 0; i < manifest.files.length; i++) {

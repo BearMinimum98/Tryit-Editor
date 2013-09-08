@@ -7,7 +7,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY Kevin Zhou "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE FREEBSD PROJECT OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 var integrity = true;
-if (navigator.onLine || md5) {
+if (navigator.onLine || typeof md5 != "undefined") {
 	try {
 		if (localStorage.resources) {
 			var resources = localStorage.resources.split(";");
@@ -32,5 +32,9 @@ if (!integrity) {
 	alert("Files were modified (and/or minor update released). File cache has been cleared. Page will now reload to download files.");
 	location.reload();
 } else {
-	console.log("Integrity check complete, file cache OK");
+	if (navigator.onLine) {
+		console.log("Integrity check complete, file cache OK");
+	} else {
+		console.error("No internet connection!");
+	}
 }
